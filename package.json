@@ -1,0 +1,48 @@
+{
+  "name": "detect-drives",
+  "version": "1.0.0",
+  "description": "Detect Drives: A Node.js package for effortlessly identifying and gathering information about drives across Windows, macOS, and Linux systems. Simple, cross-platform drive detection and retrieval for your applications.",
+  "main": "source/index.js",
+  "types": "./source/index.d.ts",
+  "author": "nextyfine-dev",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./source/index.d.ts",
+      "require": "./source/index.js",
+      "default": "./source/index.js"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "bun x tsc"
+  },
+  "files": [
+    "source"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextyfine-dev/detect-drives.git"
+  },
+  "keywords": [
+    "drive detection",
+    "disk information",
+    "system utilities",
+    "cross-platform",
+    "Node.js",
+    "Windows",
+    "macOS",
+    "Linux",
+    "storage",
+    "disk management"
+  ],
+  "bugs": {
+    "url": "https://github.com/nextyfine-dev/detect-drives/issues"
+  },
+  "homepage": "https://github.com/nextyfine-dev/detect-drives#readme"
+}
