@@ -79,3 +79,4 @@ console.log("Detected USB Drives:", usbDrives);
 - `detectDrivesOnUnix()`
 
 ## License
+This package is licensed under the [MIT License](https://github.com/nextyfine-dev/detect-drives/blob/master/LICENSE). See the [LICENSE](./LICENSE) file for more information.
