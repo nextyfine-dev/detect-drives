@@ -221,25 +221,30 @@ export const detectDrivesOnWindows = async () => {
       .split("\r\n")
       .slice(1)
       .map((detail) => {
-        const [
-          path,
-          ds1,
-          ds2,
-          ds3,
-          driveType,
-          fileSystem,
-          availableSize,
-          totalSize,
-          ...name
-        ] = detail.split(/\s+/).filter(Boolean);
+        const detailArray = detail.split(/\s+/).filter(Boolean);
+        const filterKeywords = ["Local", "Fixed", "Disk", "Removable"];
+
+        const filterDetail = detailArray.filter(
+          (detail) => !filterKeywords.includes(detail.trim())
+        );
+        const description = detailArray.filter((detail) =>
+          filterKeywords.includes(detail.trim())
+        );
+
+        const newName =
+          description && description.length > 0
+            ? description.join(" ")
+            : "Local Disk";
+
+        const [path, driveType, fileSystem, availableSize, totalSize, ...name] =
+          filterDetail;
         return {
           path,
-          description: `${ds1} ${ds2} ${ds3}`,
           driveType,
           fileSystem,
           availableSize,
           totalSize,
-          name: name && name.length > 0 ? name.join(" ") : "Local Disk",
+          name: name && name.length > 0 ? name.join(" ") : newName,
           isUsb: parseInt(driveType) === 2,
         };
       });
