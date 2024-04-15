@@ -231,7 +231,7 @@ export const detectDrivesOnWindows = async () => {
           availableSize,
           totalSize,
           ...name
-        ] = detail.split(/s+/).filter(Boolean);
+        ] = detail.split(/\s+/).filter(Boolean);
         return {
           path,
           description: `${ds1} ${ds2} ${ds3}`,
