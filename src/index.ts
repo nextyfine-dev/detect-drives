@@ -142,7 +142,7 @@ const execCommand = async (command: string) => {
   return new Promise((resolve, reject) => {
     exec(command, (error, stdout, stderr) => {
       if (error || stderr) {
-        reject(error || stderr);
+        reject(new Error(error?.message ?? stderr));
       } else {
         resolve(stdout);
       }
