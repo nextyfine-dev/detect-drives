@@ -1,6 +1,6 @@
 {
   "name": "detect-drives",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Detect Drives: A Node.js package for effortlessly identifying and gathering information about drives across Windows, macOS, and Linux systems. Simple, cross-platform drive detection and retrieval for your applications.",
   "main": "source/index.js",
   "types": "./source/index.d.ts",
@@ -14,10 +14,10 @@
     }
   },
   "devDependencies": {
-    "@types/node": "^20.12.7"
+    "@types/node": "^20.19.37"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "build": "bun x tsc"
